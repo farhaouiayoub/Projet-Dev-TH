@@ -87,11 +87,17 @@ class AdminController extends Controller
 
     protected function save(array $data, article $article = null): RedirectResponse
     {
+
+
         if (isset($data['image'])) {
-            if (isset($article->image)) {
-                Storage::delete($article->image);
+            if ($article?->image) {
+                Storage::disk('public')->delete($article->image); // Utilisez le disk 'public'
             }
-            $data['image'] = $data['image']->store('image');
+            //if (isset($article->image)) {
+            //Storage::delete($article->image);
+            // Modifiez cette ligne
+            $path = $data['image']->store('images', 'public'); // Stockage dans public/storage/images
+            $data['image'] = $path;
         }
 
         $data['excerpt'] = Str::limit($data['content'], 150);
@@ -113,6 +119,9 @@ class AdminController extends Controller
      */
     public function destroy(article $article)
     {
+        $article->ratings()->delete();      // Supprimer les ratings associés en premier
+
+            // Puis supprimer l'article
         Storage::delete($article->image);
         $article->delete();
 
