@@ -47,5 +47,11 @@ class User extends Authenticatable
         return $this->role === Role::Default;
     }
 
+    public function themes()
+    {
+        return $this->belongsToMany(Theme::class);
+    }
+
+
 
 }

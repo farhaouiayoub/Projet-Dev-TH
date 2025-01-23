@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Theme;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\View\View;
@@ -19,10 +20,33 @@ class HomeController extends Controller
     }
 
 
-    public function index():View
+    public function index(): View
     {
-        return view('home.index');
+        $themes = Theme::all();
+        return view('home.index', compact('themes'));
     }
+
+
+    public function updatetheme(Request $request): RedirectResponse
+    {
+        $user = Auth::user();
+
+        $validated = $request->validate([
+            'theme_id' => ['required', 'array'],
+            'theme_id.*' => ['exists:themes,id']
+        ]);
+
+        $user->themes()->sync($validated['theme_id']);
+
+        return redirect()->route('home')->withStatus('Abonment registré');
+
+
+    }
+
+
+
+
+
 
     public function updatePassword(Request $request): RedirectResponse
     {

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class theme extends Model
+class Theme extends Model
 {
 
     use HasFactory;
@@ -23,7 +23,16 @@ class theme extends Model
         return $this->hasMany(article::class);
     }
 
-    
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
+
+
+
+
+
 
 
 

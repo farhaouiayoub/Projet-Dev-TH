@@ -12,6 +12,7 @@
         @if($article->theme)
         <a href="{{ route('Articles.byTheme' , [ 'theme' => $article->theme ] ) }}" class="category">{{ $article->theme->name }}</a>
         @endif
+        <div></div>
         @if($article->Numero)
         <a href="{{ route('Articles.byNumero' , [ 'Numero' => $article->Numero ] ) }}" class="Numeros">{{ $article->Numero->description }}</a>
         @endif

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css','resources/css/static.css'])
 
 
     <title> {{ $title }} </title>
@@ -60,8 +60,11 @@
             <nav>
                 @auth
                     <a href="{{ route('home') }}" class="nav-link">Mon Compte</a>
+
+
                     @if(auth()->user()->isAdmin())
                     <a href="{{ route('admin.articles.index') }}" class="nav-link">Gestion des articles</a></li>
+                    <a href="{{ route('admin.static') }}" class="nav-link">static</a></li>
                     @endif
                     <a href="{{ route('logout') }}" onclick="submitLogoutForm(event)" class="nav-link">Déconnexion </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
