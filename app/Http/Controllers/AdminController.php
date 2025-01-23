@@ -59,7 +59,7 @@ class AdminController extends Controller
             'article' => $article,
             'themes' => theme::orderBy('name')->get(),
             'tags' => Tag::orderBy('name')->get(),
-            'Numeros' => Numero::orderBy('name')->get(),
+            'numeros' => Numero::orderBy('description')->get(),
 
         ]);
     }
@@ -104,6 +104,7 @@ class AdminController extends Controller
         );
 
     }
+
 
 
 
