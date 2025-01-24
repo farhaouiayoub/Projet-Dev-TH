@@ -23,7 +23,14 @@ class HomeController extends Controller
     public function index(): View
     {
         $themes = Theme::all();
-        return view('home.index', compact('themes'));
+        $history = Auth::user()->browsingHistories()
+                    ->with('article')
+                    ->latest('viewed_at')
+                    ->paginate(10);
+
+        $filters = request()->only(['search', 'theme', 'date']);
+
+        return view('home.index', compact('themes', 'history', 'filters'));
     }
 
 
@@ -71,4 +78,25 @@ class HomeController extends Controller
 
         return redirect()->route('home')->withStatus('Mot de passe modifié');
     }
+
+
+
+
+
+
+
+    public function history(Request $request): View
+{
+    $query = Auth::user()->browsingHistories()
+                ->with(['article.theme'])
+                ->filter($request->all())
+                ->latest('viewed_at');
+
+    return view('history.historique', [
+        'history' => $query->paginate(10),
+        'themes' => Theme::all(),
+        'filters' => $request->all()
+    ]);
+}
+
 }

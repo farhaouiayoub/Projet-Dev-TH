@@ -41,6 +41,7 @@ class Article extends Model
             ->orWhereHas('tags', fn (Builder $query)=> $query->where('name', 'LIKE', '%'  . $filters['search'] . '%'))
             ->orWhereHas('theme', fn (Builder $query)=> $query->where('name', 'LIKE', '%'  . $filters['search'] . '%'))
             ->orWhereHas('numero', fn (Builder $query)=> $query->where('description', 'LIKE', '%'  . $filters['search'] . '%'))
+            ->orWhereHas('comments', fn (Builder $query)=> $query->where('content', 'LIKE', '%'  . $filters['search'] . '%'))
             );
         }
 

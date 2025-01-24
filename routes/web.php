@@ -20,6 +20,10 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
+Route::get('/history', [HomeController::class, 'history'])->name('history')->middleware('auth');
+
+
 Route::post('/articles/{article}/rate', [ArticleController::class, 'rate'])->name('articles.rate');
 
 

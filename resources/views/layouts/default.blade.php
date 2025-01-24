@@ -1,4 +1,3 @@
-
 {{-- @dd($articles); --}}
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-    @vite(['resources/css/app.css','resources/css/static.css'])
+    @vite(['resources/css/app.css','resources/css/static.css', 'resources/css/history.css' , 'resources/css/themes.css' , 'resources/css/home.css' , 'resources/css/gestion.css' , 'resources/css/pagination.css' , 'resources/css/rating.css' , 'resources/css/formule.css'])
 
 
     <title> {{ $title }} </title>
@@ -18,6 +17,10 @@
             event.preventDefault();
             document.getElementById('logout-form').submit();
         }
+
+
+
+
     </script>
 
 </head>
@@ -45,7 +48,6 @@
             </a>
         @endguest
 
-
             <!-- Search -->
             <form class="search-bar" action="{{ route('index') }}" >
                 <input type="search" value="{{ request()->search }}" name="search" placeholder="Rechercher un article">
@@ -60,6 +62,7 @@
             <nav>
                 @auth
                     <a href="{{ route('home') }}" class="nav-link">Mon Compte</a>
+                    <a href="{{ route('history') }}" class="nav-link">Historique</a>
 
 
                     @if(auth()->user()->isAdmin())

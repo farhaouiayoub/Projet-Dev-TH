@@ -52,6 +52,14 @@ class User extends Authenticatable
         return $this->belongsToMany(Theme::class);
     }
 
+    public function browsingHistories()
+
+    {
+
+        return $this->hasMany(BrowsingHistory::class);
+
+    }
+
 
 
 }

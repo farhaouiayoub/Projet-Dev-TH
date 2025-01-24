@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\article;
+use App\Models\BrowsingHistory;
 use App\Models\Tag;
 use App\Models\Comment;
 use App\Models\Numero;
@@ -34,7 +35,7 @@ class articleController extends Controller
     {
         return $this->articlesView(['theme' => $theme]);
     }
-    
+
 
     public function articlesByNumero(Numero $Numero):View
     {
@@ -57,13 +58,23 @@ class articleController extends Controller
 
 
 
-    public function show(article $article):View
+    public function show(Article $article): View
     {
+        if(Auth::check()) {
+            BrowsingHistory::create([
+                'user_id' => Auth::id(),
+                'article_id' => $article->id,
+                'viewed_at' => now()
+            ]);
+        }
+
         return view('Articles.show', [
             'article' => $article,
         ]);
     }
 
+
+    
 
     public function comment(article $article, Request $request): RedirectResponse
     {

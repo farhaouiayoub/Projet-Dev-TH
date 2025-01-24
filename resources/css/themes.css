@@ -1,0 +1,51 @@
+
+.descriptiontheme {
+    padding: 15px;
+    transition: all 0.4s ease-in-out;
+    font-size: 18px;
+    color: #000000;
+    pointer-events: none;
+    /* Ajout pour corriger le dépassement */
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.theme-details h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #374151;
+}
+
+
+.theme-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    background-color: #E6D7C4;
+    border-bottom: 1px solid #ddd;
+    width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+
+}
+
+.theme-card img {
+    width: 1050px; /* L'image prend toute la largeur disponible */
+    height: 250px; /* Hauteur fixe pour uniformiser */
+    border-radius: 28px; /* Optionnel : ajoute des coins arrondis */
+    object-fit: cover; /* L'image est couverte par la zone */
+    display: block;
+    margin: 0 auto;
+
+}
+
+.theme-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

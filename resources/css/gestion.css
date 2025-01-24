@@ -1,0 +1,88 @@
+/* styles.css */
+
+/* Container principal */
+.container-1 {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* En-tête */
+.header-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-content-3 h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.header-content-3 p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.header-action-4 a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #4f46e5;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header-action-4 a:hover {
+    background-color: #4338ca;
+}
+
+/*  */
+.table-wrapper-5 {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.table-container-6 table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.table-container-6 th,
+.table-container-6 td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+}
+
+.table-container-6 th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.table-container-6 tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-container-6 a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.table-container-6 a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
