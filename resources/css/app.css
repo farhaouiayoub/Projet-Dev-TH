@@ -89,13 +89,12 @@ header a.logo {
     transition: all 0.2s ease;
     pointer-events: none;
     z-index: 1000; /* S'assurer qu'il est au-dessus */
-    width: 250px; /* Largeur augmentée */
+    width: 300px; /* Largeur augmentée */
 
     display: flex;
     flex-direction: column; /* Organisation verticale */
     gap: 0.5rem; /* Espacement entre les liens */
     padding: 1rem 0; /* Padding vertical */
-    width: 250px; /* Largeur légèrement augmentée */
 
     text-align: left; /* Alignement à gauche */
 }
@@ -525,7 +524,7 @@ body {
     .article-card {
         padding: 5px;
     }
-    
+
 
     .article-details h1 {
         font-size: 20px;

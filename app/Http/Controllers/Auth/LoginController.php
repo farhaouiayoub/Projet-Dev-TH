@@ -33,11 +33,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, (bool) $request->remember)) {
             $request->session()->regenerate();
 
-            // Vérifiez le rôle de l'utilisateur après la connexion
-            //if (Auth::user()->role === \App\Enums\Role::Guest) {
-               // return redirect()->intended('/guest/themes'); // Redirige les invités vers la page des thèmes
-            //}
-
             return redirect()->intended('/home'); // Redirige les autres utilisateurs vers /home
         }
 

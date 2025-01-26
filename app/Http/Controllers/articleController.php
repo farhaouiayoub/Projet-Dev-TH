@@ -74,7 +74,7 @@ class articleController extends Controller
     }
 
 
-    
+
 
     public function comment(article $article, Request $request): RedirectResponse
     {

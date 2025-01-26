@@ -86,3 +86,47 @@
     text-decoration: underline;
 }
 
+.danger {
+    background-color: red;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.danger:hover {
+    background-color: darkred;
+}
+
+.primary{
+    background-color: #4f46e5;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.primary:hover {
+    background-color: #4338ca;
+}
+
+.btnAB{
+    background-color: #000000;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btnAB:hover {
+    background-color: #ff2f00;
+}

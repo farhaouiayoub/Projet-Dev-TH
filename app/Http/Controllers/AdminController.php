@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\Role;
 use App\Models\article;
 use App\Models\Tag;
 use App\Models\theme;
@@ -10,8 +11,10 @@ use Illuminate\Support\Str;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 use App\Http\Requests\PostRequest;
 use App\Models\Numero;
+use App\Models\User;
 use Illuminate\View\View;
 
 
@@ -34,6 +37,16 @@ class AdminController extends Controller
             'articles' => article::without('theme', 'tags' , 'Numero')->latest()->get(),
         ]);
     }
+
+
+
+    public function indexuser()
+    {
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -126,5 +139,11 @@ class AdminController extends Controller
         $article->delete();
 
         return redirect()->route('admin.articles.index');
+    }
+
+    public function destroyuser(User $user)
+    {
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success', 'Utilisateur supprimé');
     }
 }

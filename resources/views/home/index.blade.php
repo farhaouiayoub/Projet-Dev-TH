@@ -1,32 +1,33 @@
 <x-default-layout title="Mon compte">
 
-    <div class="form-container-1">
-        <form action="{{ route('theme.update') }}" method="POST">
-            @csrf
-            @method('PATCH')
 
 
+    @if(auth()->user()->isAbonne())
+        <div class="form-container-1">
+            <form action="{{ route('theme.update') }}" method="POST">
+                @csrf
+                @method('PATCH')
 
-            <!-- Titre -->
-            <div class="section-title-2">
-                <h1>Gestion des abonnments</h1>
-                <p>Vous pouvez géreé vos abonnments.</p>
-            </div>
-
-            <!-- Champs du formulaire -->
-            <div class="form-fields-3">
-                <div class="form-group">
-                    <x-select name="theme_id" label="Thème" :list="$themes" :value="old('theme_id', auth()->user()->theme_id)" multiple class="form-control" />
+                <!-- Titre -->
+                <div class="section-title-2">
+                    <h1>Gestion des abonnments</h1>
+                    <p>Vous pouvez géreé vos abonnments.</p>
                 </div>
-            </div>
 
-            <!-- Bouton -->
-            <div class="form-actions-5">
-                <button type="submit">Abonnée</button>
-            </div>
-        </form>
-    </div>
+                <!-- Champs du formulaire -->
+                <div class="form-fields-3">
+                    <div class="form-group">
+                        <x-select name="theme_id" label="Thème" :list="$themes" :value="old('theme_id', auth()->user()->theme_id)" multiple class="form-control" />
+                    </div>
+                </div>
 
+                <!-- Bouton -->
+                <div class="form-actions-5">
+                    <button type="submit">Abonnée</button>
+                </div>
+            </form>
+        </div>
+    @endif
 
 
 
@@ -83,6 +84,6 @@
 
 
 
-    
+
 
 

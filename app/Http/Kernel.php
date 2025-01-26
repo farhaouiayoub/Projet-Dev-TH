@@ -19,7 +19,7 @@ class Kernel extends HttpKernel
      protected $routeMiddleware = [
         // ...existing middleware...
         'admin' => \App\Http\Middleware\Admin::class,
-        //'guest' => \App\Http\Middleware\Guest::class, // Ajoutez cette ligne
+        'responsable' => \App\Http\Middleware\Responsable::class,
 
     ];
 
@@ -66,8 +66,8 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
-        //'guest' => \App\Http\Middleware\Guest::class, // Ajoutez cette ligne
         'admin' => \App\Http\Middleware\Admin::class,
+        'responsable' => \App\Http\Middleware\Responsable::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

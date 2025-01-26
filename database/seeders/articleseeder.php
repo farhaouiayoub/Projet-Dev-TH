@@ -25,6 +25,7 @@ class articleseeder extends Seeder
         $numeros = Numero::all();
 
 
+
         article::factory(20)
             ->sequence(fn() => [
                 'theme_id' => $themes->random(),
