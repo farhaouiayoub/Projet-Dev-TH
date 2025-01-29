@@ -4,9 +4,8 @@
     <div class="container-1">
         <div class="header-2">
             <div class="header-content-3">
-                <h1>Abonnés à vos thèmes</h1>
-                <p>Interface d'administration des utilisateurs.</p>
-            </div>
+                <h1>Gestion des Abonnés aux thèmes</h1>
+                            </div>
         </div>
         <div class="table-wrapper-5">
             @if(session('success'))
@@ -51,7 +50,7 @@
                                 @endforeach
                             </td>
                             <td>
-                                <!-- Autres actions -->
+                               <!-- Autres actions -->
                             </td>
                         </tr>
                         @endforeach

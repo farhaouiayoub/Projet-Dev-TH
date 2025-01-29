@@ -4,11 +4,14 @@
         <!-- En-tête -->
         <div class="header-2">
             <div class="header-content-3">
-                <h1>articles</h1>
-                <p>Interface d'administration du blog.</p>
+                <h1>GESTION DES ARTICLES </h1>
+                <p>Interface d'administration du blog..!</p>
             </div>
-            <div class="header-action-4">
-                <a href="{{ route('admin.articles.create') }}">Créer un Article</a>
+            <div class="header-action-4 plus">
+                <a href="{{ route('admin.articles.create') }}">Partager Articles </a>
+                
+                <p class="cl"> Rédigez votre article maintenant ! </p>
+                
             </div>
         </div>
 
@@ -19,9 +22,9 @@
                     <thead>
                         <tr>
                             <th>Titre</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Article</th>
+                            <th>Edition</th>
+                            <th>Suppression</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,7 +32,7 @@
                         <tr>
                             <td>{{ $article->title }}</td>
                             <td>
-                                <a href="{{ route('Articles.show', ['article' => $article]) }}" target="_blank">Voir l'article</a>
+                                <a href="{{ route('Articles.show', ['article' => $article]) }}" target="_blank">Afficher</a>
                             </td>
                             <td>
                                 <a href="{{ route('admin.articles.edit', ['article' => $article]) }}">Editer</a>

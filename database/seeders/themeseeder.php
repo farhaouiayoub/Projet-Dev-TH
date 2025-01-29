@@ -40,23 +40,6 @@ class themeseeder extends Seeder
                 'name' => $theme,
                 'slug' => str::slug($theme),
                 'description' => fake()->paragraphs(asText: true), // Générez un paragraphe de texte aléatoire
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             ]));
     }
 }

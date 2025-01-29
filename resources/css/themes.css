@@ -1,51 +1,239 @@
-
-.descriptiontheme {
-    padding: 15px;
-    transition: all 0.4s ease-in-out;
-    font-size: 18px;
-    color: #000000;
-    pointer-events: none;
-    /* Ajout pour corriger le dépassement */
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
+/* Conteneur Principal */
+.divarticle {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #efe7f0, #f7fafc);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
 
-.theme-details h1 {
-    font-size: 50px;
-    font-weight: bold;
-    color: #374151;
+/* Animation d'apparition du conteneur principal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-
+/* Section des cartes de thème */
 .theme-card {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-bottom: 1px solid #ddd;
-    padding: 20px;
-    background-color: #E6D7C4;
-    border-bottom: 1px solid #ddd;
-    width: 1200px;
-    margin: 20px auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 25px;
+    width: 100%;
+    margin-bottom: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
 }
 
+/* Effet au survol de la carte */
+.theme-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    background-color: #f4f7fc;
+    filter: brightness(1.05);
+}
+
+/* Image du thème */
 .theme-card img {
-    width: 1050px; /* L'image prend toute la largeur disponible */
-    height: 250px; /* Hauteur fixe pour uniformiser */
-    border-radius: 28px; /* Optionnel : ajoute des coins arrondis */
-    object-fit: cover; /* L'image est couverte par la zone */
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Effet au survol de l'image */
+.theme-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre du thème */
+.theme-details h1 {
+    font-size: 38px;
+    font-weight: 600;
+    color: #3e4e63;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.theme-details h1:hover {
+    color: #8633d4;
+    transform: translateY(-5px);
+}
+
+/* Description du thème */
+.descriptiontheme {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    background: #f8fafb;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Effet au survol de la description */
+.descriptiontheme:hover {
+    color: #8c1e9b;
+    background-color: #eaf7e6;
+    transform: translateY(-5px);
+}
+
+/* Aucun thème trouvé */
+.aucun {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff5722;
+    padding: 40px;
+    background-color: #fff1f1;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    animation: surpriseAppear 0.6s ease-out;
+}
+
+/* Animation de surprise pour "Aucun thème trouvé" */
+@keyframes surpriseAppear {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Conteneur principal */
+.linkspagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+/* Éléments de pagination */
+.linkspagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    font-weight: 500;
+    color: #4a5568;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    height: 30px;
+    padding: 0 8px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* État hover */
+.linkspagination a:not(.active, .disabled):hover {
+    background: #f8fafc;
+    color: #3b82f6;
+    border-color: #93c5fd;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* État actif */
+.linkspagination .active {
+    background: #3b82f6;
+    color: white !important;
+    border-color: #3b82f6;
+    font-weight: 600;
+    box-shadow: 0 1px 3px 0 rgba(59, 130, 246, 0.3);
+}
+
+/* État désactivé */
+.linkspagination .disabled {
+    color: #cbd5e0 !important;
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 640px) {
+    .linkspagination {
+        gap: 4px;
+    }
+
+    .linkspagination a {
+        min-width: 32px;
+        height: 32px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+}
+
+/* Médias Queries pour Responsive Design */
+@media (max-width: 768px) {
+    .divarticle {
+        padding: 30px;
+    }
+
+    .theme-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .theme-details h1 {
+        font-size: 30px;
+    }
+
+    .descriptiontheme {
+        font-size: 16px;
+    }
+
 
 }
 
-.theme-details {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+@media (max-width: 480px) {
+    .divarticle {
+        padding: 20px;
+    }
+
+    .theme-card img {
+        height: 220px;
+    }
+
+    .theme-details h1 {
+        font-size: 24px;
+    }
+
+    .descriptiontheme {
+        font-size: 14px;
+    }
+
 }

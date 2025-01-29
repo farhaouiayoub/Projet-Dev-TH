@@ -98,9 +98,10 @@ select {
     visibility: hidden;
 
 }
-.page-link
-{
-    margin-left: 700px;
+
+
+.page-link {
+    margin-left: 10px;
     border: 1px solid #1d36d6;
     border-radius: 5px;
     background-color: #f8f9fa;

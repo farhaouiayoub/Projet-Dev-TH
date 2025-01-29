@@ -7,68 +7,219 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+
 .container {
-    background: white;
+    background: rgb(243, 239, 245);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
 }
+
+.image-container {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 600px;
+}
+p{
+    color: blue;
+    font-weight: bold;
+  text-align: center;
+}
+
+.form-container {
+    flex: 1;
+    padding: 10px;
+    width: 100%;
+    display: flex; /* Appliquer Flexbox pour centrer le formulaire */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+     /* Assurer que les éléments du formulaire soient en colonne */
+}
+
 .form-group {
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
+    font-weight: bold;
 }
+
 .form-group input {
-    width: 100%;
+    width: 400px;
     padding: 10px;
     border: 1px solid #4f46e5;
     border-radius: 4px;
     font-size: 14px;
-
 }
+
 .form-group input:focus {
     border-color: #6366f1;
     outline: none;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
+
 .button {
     display: block;
     width: 100%;
-    background-color: #6366f1;
+    background-color: #7173d3;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 4px;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 20px;
 }
+
 .button:hover {
     background-color: #4f46e5;
 }
+
 .checkbox-group {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
+
 .checkbox-group input {
     margin-right: 8px;
 }
-.icon{
-    color: #4f46e5;
+
+.icon {
+    color: #5e59bb;
     width: 70px;
     height: 70px;
     margin: 0 auto 20px;
-
 }
-.pp{
+
+.pp {
     margin-top: 2px;
     font-size: 15px;
     color: rgb(255, 0, 0);
 }
+
+/* ... Votre code existant ... */
+
+.container {
+    background: rgb(243, 239, 245);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px; /* Ajout d'une largeur maximale */
+    display: flex;
+    flex-wrap: wrap; /* Permettre le retour à la ligne */
+    justify-content: space-between;
+    align-items: center;
+    min-height: 600px; /* Changement de height à min-height */
+    margin: 20px;
+}
+
+.image-container {
+    flex: 1 1 45%; /* Flex-grow | Flex-shrink | Flex-basis */
+    min-width: 300px;
+    padding-right: 20px;
+}
+
+.form-container {
+    flex: 1 1 45%;
+    min-width: 300px;
+    padding: 20px;
+}
+
+/* Media Queries améliorées */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        min-height: auto;
+        margin: 10px;
+    }
+
+    .image-container {
+        padding-right: 0;
+        margin-bottom: 30px;
+        max-width: 80%;
+    }
+
+    .image-container img {
+        height: 400px;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .image-container {
+        max-width: 100%;
+    }
+
+    .image-container img {
+        height: 300px;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-group input {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .button {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .image-container img {
+        height: 250px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .pp {
+        font-size: 13px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+

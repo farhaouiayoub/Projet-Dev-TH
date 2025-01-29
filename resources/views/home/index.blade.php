@@ -23,7 +23,7 @@
 
                 <!-- Bouton -->
                 <div class="form-actions-5">
-                    <button type="submit">Abonnée</button>
+                    <button type="submit">S'abonner</button>
                 </div>
             </form>
         </div>

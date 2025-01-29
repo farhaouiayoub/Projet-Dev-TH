@@ -1,10 +1,29 @@
-/* styles.css */
+/* Conteneur Principal */
 
-/* Container principal */
+
 .container-1 {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    max-width: 1500px;
+    min-height: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #f0f4f8);
+    border-radius: 25px;
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+
+}
+
+/* Animation principale */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* En-tête */
@@ -12,121 +31,206 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    background: linear-gradient(90deg, #7b47db, #dfdbe2);
+    padding: 20px 30px;
+    border-radius: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(37, 117, 252, 0.5);
+    position: relative;
+    overflow: hidden;
+
+}
+
+.header-2::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: pulseGlow 3s infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
 }
 
 .header-content-3 h1 {
-    font-size: 20px;
+    font-size: 70px;
     font-weight: bold;
-    color: #333;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #f3f3f3, #a4e2f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorShift 6s infinite linear;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .header-content-3 p {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #666;
+    font-size: 16px;
+    margin: 8px 0 0;
+    color: rgba(255, 255, 255, 0.8);
 }
+.cl{
+    color: #5c048f;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
 
 .header-action-4 a {
-    display: inline-block;
-    padding: 8px 12px;
-    background-color: #4f46e5;
-    color: white;
+   margin:25px;
+
     text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #ff00dd, #ee0979);
+    border-radius: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 15px rgba(238, 9, 121, 0.4);
 }
+
 
 .header-action-4 a:hover {
-    background-color: #4338ca;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(238, 9, 121, 0.6);
 }
 
-/*  */
+/* Table des Articles */
 .table-wrapper-5 {
-    margin-top: 20px;
-    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: tableAppear 0.8s ease-out;
+}
+
+@keyframes tableAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .table-container-6 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
 }
 
 .table-container-6 th,
 .table-container-6 td {
-    padding: 12px 16px;
+    padding: 20px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
     color: #333;
 }
 
 .table-container-6 th {
-    background-color: #f1f1f1;
+    background:  #7b47db;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 3px solid rgba(37, 117, 252, 0.3);
+}
+
+.table-container-6 tbody tr {
+    transition: background 0.3s ease, transform 0.2s ease;
+
+}
+
+.table-container-6 tbody tr:hover {
+    background: rgba(79, 172, 254, 0.1);
+    transform: translateX(10px);
+    box-shadow: 0 2px 15px rgba(79, 172, 254, 0.2);
+}
+
+.table-container-6 td a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #7b47db;
+    transition: color 0.3s ease, transform 0.2s ease;
+    border-radius: 10px;
+    padding: 6px 16px;
+}
+
+.table-container-6 td a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #8400f0, #00dfd8);
+}
+
+
+.table-container-6 td:last-child a {
+    color: #8400f0;
+}
+
+.table-container-6 td:last-child a:hover {
+    color: #f1f1f1;
+
+}
+
+/* Suppression Bouton */
+.table-container-6 td form button {
+    background: none;
+
+    color: #8400f0;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.table-container-6 td form button:hover {
+    color: #f3ebed;
     font-weight: bold;
 }
 
-.table-container-6 tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.table-container-6 a {
-    color: #4f46e5;
-    text-decoration: none;
+td{
     font-weight: bold;
 }
 
-.table-container-6 a:hover {
-    color: #2c3e50;
-    text-decoration: underline;
-}
 
-.danger {
-    background-color: red;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
+
+/* Boutons */
+button.primary {
+
+    padding: 8px 15px;
     font-size: 14px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    width: 240px;
+    background: linear-gradient(90deg, #8400f0, #00dfd8);
+
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.danger:hover {
-    background-color: darkred;
-}
+button.primary:hover{
+    background: linear-gradient(90deg, #8400f0, #00dfd8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
 
-.primary{
-    background-color: #4f46e5;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.primary:hover {
-    background-color: #4338ca;
-}
-
-.btnAB{
-    background-color: #000000;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.btnAB:hover {
-    background-color: #ff2f00;
 }
