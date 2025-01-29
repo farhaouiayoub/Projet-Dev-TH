@@ -26,7 +26,6 @@ class ThemeController extends Controller
 
 
 
-        // app/Http/Controllers/ThemeController.php
     public function manageResponsables()
     {
         return view('admin.themes.responsables', [

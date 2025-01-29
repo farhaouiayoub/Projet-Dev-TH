@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
+
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -46,11 +48,7 @@ class HomeController extends Controller
         $user->themes()->sync($validated['theme_id']);
 
         return redirect()->route('home')->withStatus('Abonment registré');
-
-
     }
-
-
 
 
 
@@ -83,20 +81,18 @@ class HomeController extends Controller
 
 
 
-
-
     public function history(Request $request): View
-{
-    $query = Auth::user()->browsingHistories()
-                ->with(['article.theme'])
-                ->filter($request->all())
-                ->latest('viewed_at');
+    {
+        $query = Auth::user()->browsingHistories()
+                    ->with(['article.theme'])
+                    ->filter($request->all())
+                    ->latest('viewed_at');
 
-    return view('history.historique', [
-        'history' => $query->paginate(10),
-        'themes' => Theme::all(),
-        'filters' => $request->all()
-    ]);
-}
+        return view('history.historique', [
+            'history' => $query->paginate(10),
+            'themes' => Theme::all(),
+            'filters' => $request->all()
+        ]);
+    }
 
 }

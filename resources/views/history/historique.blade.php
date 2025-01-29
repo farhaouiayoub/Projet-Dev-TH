@@ -3,12 +3,11 @@
  <!-- Nouvelle Section Historique -->
  <div class="custom-form-container">
     <h2>Votre historique de navigation</h2>
-
     <form method="GET" action="{{ route('history') }}" class="custom-mb-4">
         <div class="custom-row custom-g-3">
             <div class="custom-col-md-4">
                 <input type="text" name="search" class="custom-form-control"
-                       placeholder="Rechercher..." value="{{ request('search') }}">
+                        placeholder="Rechercher..." value="{{ request('search') }}">
             </div>
 
             <div class="custom-col-md-3">
@@ -25,7 +24,7 @@
 
             <div class="custom-col-md-3">
                 <input type="date" name="date" class="custom-form-control"
-                       value="{{ request('date') }}">
+                        value="{{ request('date') }}">
             </div>
 
             <div class="custom-col-md-2">

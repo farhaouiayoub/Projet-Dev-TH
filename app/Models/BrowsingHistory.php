@@ -30,7 +30,7 @@ class BrowsingHistory extends Model
         return $query->when($filters['search'] ?? false, function($query, $search) {
             $query->whereHas('article', function($query) use ($search) {
                 $query->where('title', 'like', '%'.$search.'%')
-                      ->orWhere('content', 'like', '%'.$search.'%');
+                        ->orWhere('content', 'like', '%'.$search.'%');
             });
         })
         ->when($filters['theme'] ?? false, function($query, $theme) {
