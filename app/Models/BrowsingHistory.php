@@ -10,7 +10,7 @@ class BrowsingHistory extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'article_id', 'viewed_at'];  //    protected $dates = ['viewed_at'];
+    protected $fillable = ['user_id', 'article_id', 'viewed_at']; // vous protégez votre modèle contre les attaques de type "Mass Assignment Vulnerability" en spécifiant explicitement les champs qui peuvent être assignés en masse.
 
 
     public function user(): BelongsTo
@@ -34,7 +34,6 @@ class BrowsingHistory extends Model
             });
         })
         ->when($filters['theme'] ?? false, function($query, $theme) {
-            // Correction : Filtrer directement par theme_id sur la table articles
             $query->whereHas('article', function($query) use ($theme) {
                 $query->where('theme_id', $theme);
             });

@@ -20,10 +20,13 @@ class Theme_user extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function responsables()
+
+
+    public function responsables() // explication : un thème peut avoir plusieurs responsables
     {
         return $this->belongsToMany(User::class, 'theme_responsable')
                     ->where('role', Role::Responsable->value)
                     ->withTimestamps();
     }
+
 }

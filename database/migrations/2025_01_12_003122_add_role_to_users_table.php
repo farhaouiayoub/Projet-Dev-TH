@@ -12,10 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        
+
         Schema::table('users', function (Blueprint $table) {
             $roles = array_column(Role::cases(), 'value');
-            $table->enum('role', $roles)->after('email')->default(Role::Abonne->value); // Corriger "Abonnee" en "Abonne"
+            $table->enum('role', $roles)->after('email')->default(Role::Abonne->value);
         });
     }
 

@@ -47,23 +47,15 @@ class AdminController extends Controller
     }
 
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(): View
     {
         return $this->showForm();
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(article $article)
     {
         return $this->showForm($article);
-
     }
 
     protected function showForm(article $article = new article): View
@@ -77,19 +69,13 @@ class AdminController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(PostRequest $request): RedirectResponse
     {
         return $this->save($request->validated());
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * Update the specified resource in storage.
-     */
 
     public function update(PostRequest $request, article $article): RedirectResponse
     {
@@ -101,7 +87,6 @@ class AdminController extends Controller
     protected function save(array $data, article $article = null): RedirectResponse
     {
 
-
         if (isset($data['image'])) {
             if ($article?->image) {
                 Storage::disk('public')->delete($article->image); // Supprime l'ancienne image
@@ -109,7 +94,7 @@ class AdminController extends Controller
             $path = $data['image']->store('images', 'public'); // Stocke la nouvelle image
             $data['image'] = $path;
         }
-        
+
         $data['excerpt'] = Str::limit($data['content'], 150);
 
         $article = article::updateOrCreate(['id' => $article?->id], $data);
@@ -122,9 +107,6 @@ class AdminController extends Controller
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(article $article)
     {
         $article->ratings()->delete();      // Supprimer les ratings associés en premier

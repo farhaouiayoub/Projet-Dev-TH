@@ -51,8 +51,6 @@ class HomeController extends Controller
     }
 
 
-
-
     public function updatePassword(Request $request): RedirectResponse
     {
         $user = Auth::user();
@@ -76,8 +74,6 @@ class HomeController extends Controller
 
         return redirect()->route('home')->withStatus('Mot de passe modifié');
     }
-
-
 
 
 

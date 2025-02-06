@@ -20,7 +20,6 @@
         }
 
          // Gestion du menu mobile
-        // Remplacer le code existant par ceci
         document.addEventListener('DOMContentLoaded', () => {
             const menuButton = document.querySelector('.mobile-menu-btn');
             const mobileMenu = document.querySelector('.mobile-menu');
@@ -84,7 +83,7 @@
             </form>
 
             <nav>
-                 <!-- Bouton mobile -->
+                    <!-- Bouton mobile -->
                 <button class="mobile-menu-btn" aria-expanded="false">
                     <svg style="width:2rem;height:2rem; stroke: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
@@ -132,7 +131,7 @@
                         </a>
 
                     @endif
-                    
+
                     @if(auth()->user()->isResponsable())
                     <a href="{{ route('responsable.abonnes') }}" >
                         <svg style="width:1.2rem;margin-right:0.5rem;" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

@@ -11,15 +11,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Article extends Model
 {
-    use HasFactory;
+    use HasFactory; // explication : il s'agit d'un trait qui permet de générer des données de test pour les modèles
 
 
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['id', 'created_at', 'updated_at']; // explication : permet de protéger les champs de la table
 
 
-
-    protected $with = [
-        'theme',
+    protected $with = [  // explication : permet de charger les relations avec le modèle
+        'theme',      // exx
         'tags',
         'numero'
     ];
@@ -62,11 +61,10 @@ class Article extends Model
     }
 
 
-    public function exists(): bool
+    public function exists(): bool // explication : permet de vérifier si l'article existe
     {
         return (bool) $this->id;
     }
-
 
 
     public function theme(): BelongsTo
@@ -75,24 +73,26 @@ class Article extends Model
     }
 
 
-    public function tags(): BelongsToMany
+    public function tags(): BelongsToMany // explication : permet de définir la relation entre les articles et les tags
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class); // belongsToMany : (1,n) relation de plusieurs à plusieurs
     }
+
 
     public function comments(): HasMany
     {
-        return $this->hasMany(Comment::class)->latest();
+        return $this->hasMany(Comment::class)->latest(); 
     }
+
 
     public function ratings()
     {
-    return $this->hasMany(Rating::class);
+        return $this->hasMany(Rating::class);
     }
 
 
     public function numero()
     {
-    return $this->belongsTo(Numero::class);
+        return $this->belongsTo(Numero::class);
     }
 }

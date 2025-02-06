@@ -26,13 +26,6 @@ class DatabaseSeeder extends Seeder
 
             ArticleSeeder::class,
 
-
-
-
-
-
-
-
         ]);
     }
 }

@@ -11,6 +11,5 @@ class GuestController extends Controller
     {
         $themes = Theme::select('name', 'description','created_at')->paginate(6); // Récupérez uniquement les noms et descriptions des thèmes
         return view('guest.themes', compact('themes'));
-
     }
 }
