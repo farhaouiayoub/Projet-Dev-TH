@@ -18,7 +18,6 @@ use Illuminate\View\View;
 class articleController extends Controller
 {
 
-
     public function __construct()
     {
         $this->middleware('auth')->only('comment');
@@ -57,7 +56,6 @@ class articleController extends Controller
     }
 
 
-
     public function show(Article $article): View
     {
         if(Auth::check()) {
@@ -74,7 +72,6 @@ class articleController extends Controller
     }
 
 
-
     public function comment(article $article, Request $request): RedirectResponse
     {
         $validated = $request->validate([
@@ -89,8 +86,6 @@ class articleController extends Controller
 
         return back()->withStatus('Commentaire publié !');
     }
-
-
 
 
     public function rate(Article $article, Request $request)
@@ -111,9 +106,7 @@ class articleController extends Controller
             dd($e->getMessage()); // Affichez l'erreur SQL
         }
 
-
     }
-
 
 }
 
