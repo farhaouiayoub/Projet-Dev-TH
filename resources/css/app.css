@@ -256,8 +256,7 @@ main {
 /* Article Card Image */
 .article-card img {
     width: 100%;
-    height: auto;
-    max-height: 450px; /* Augmentation de la hauteur maximale */
+    height: 300px; /* Hauteur fixe pour une meilleure apparence */
     object-fit: cover;
     border-radius: 16px;
     transition: transform 0.3s ease, filter 0.3s ease;

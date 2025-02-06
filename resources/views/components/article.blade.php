@@ -4,7 +4,7 @@
 <article class="article-card">
     <!-- Image -->
     <div class="divimage">
-        <img src="{{ str_starts_with($article->image, 'http') ? $article->image : asset('storage/' . $article->image) }}" alt="Image Placeholder">
+        <img src="{{ str_starts_with($article->image, 'http') ? $article->image : asset('storage/' . $article->image) }}" alt="Image Placeholder" >
     </div>
 
     <!-- Article Details -->
@@ -43,7 +43,7 @@
             <svg style="width:1.2rem;margin-right:0.5rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"></path>
             </svg>
-             Lire l'article 
+             Lire l'article
         </a>
         @else
         <time class="description" datetime="{{ $article->created_at }}">

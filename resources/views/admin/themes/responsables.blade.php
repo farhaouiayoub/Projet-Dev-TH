@@ -1,9 +1,5 @@
 {{-- resources/views/admin/themes/responsables.blade.php --}}
 <x-default-layout title="Gestion Responsables">
-
-
-
-
         <div class="container-1">
             <div class="header-2">
                 <div class="header-content-3">

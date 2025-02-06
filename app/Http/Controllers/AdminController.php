@@ -104,15 +104,12 @@ class AdminController extends Controller
 
         if (isset($data['image'])) {
             if ($article?->image) {
-                Storage::disk('public')->delete($article->image); // Utilisez le disk 'public'
+                Storage::disk('public')->delete($article->image); // Supprime l'ancienne image
             }
-            //if (isset($article->image)) {
-            //Storage::delete($article->image);
-            // Modifiez cette ligne
-            $path = $data['image']->store('images', 'public'); // Stockage dans public/storage/images
+            $path = $data['image']->store('images', 'public'); // Stocke la nouvelle image
             $data['image'] = $path;
         }
-
+        
         $data['excerpt'] = Str::limit($data['content'], 150);
 
         $article = article::updateOrCreate(['id' => $article?->id], $data);

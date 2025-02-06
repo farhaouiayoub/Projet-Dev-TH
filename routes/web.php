@@ -54,19 +54,13 @@ Route::delete('/responsable/abonnes/{user}/theme/{theme}', [ResponsableControlle
 Route::get('/users', [ AdminController::class, 'indexuser'])->name('admin.users.index');
 Route::delete('/users/{user}', [ AdminController::class, 'destroyuser'])->name('admin.users.destroy');
 
-Route::get('/themes/responsables', [ThemeController::class, 'manageResponsables'])
-->name('admin.themes.responsables');
+Route::get('/themes/responsables', [ThemeController::class, 'manageResponsables'])->name('admin.themes.responsables');
 
-Route::post('/themes/{theme}/assign', [ThemeController::class, 'assignResponsable'])
-->name('admin.themes.assign');
+Route::post('/themes/{theme}/assign', [ThemeController::class, 'assignResponsable'])->name('admin.themes.assign');
 
 
 
-
-//Route::get('/guest/themes', [GuestController::class, 'index'])->name('guest.themes')->middleware('role:guest');
 Route::get('/', [GuestController::class, 'indexGuest'])->name('guest.themes')->middleware('guest');
-
-
 
 
 
