@@ -116,7 +116,7 @@ Affiche la liste des routes de l'application.
 - [site img : ](https://picsum.photos/)
 ----------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
-composer create-project laravel/laravel Projet1
+composer create-project laravel/laravel Projet1        ERORE : ;extension=zip       (php.ini)
 
 
 
