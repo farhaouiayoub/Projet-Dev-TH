@@ -128,6 +128,8 @@ Affiche la liste des routes de l'application.
 
 **`Crée un nouveau projet avec Vite, un outil rapide et efficace pour les applications JavaScript :`** npm init vite 
 
+**`La commande npm i react-router-dom sert à installer la bibliothèque React Router DOM dans ton projet React :`** npm i react-router-dom
+
 
 
 
