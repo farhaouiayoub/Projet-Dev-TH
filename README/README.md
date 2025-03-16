@@ -122,6 +122,12 @@ Affiche la liste des routes de l'application.
 
 **`Commande crée une projet React :`** npx create-react-app react-app.
 
+**`Installe Laravel Breeze (un système d'authentification simple) en tant que dépendance de développement :`** composer require --dev laravel/breeze
+
+**`Configure le système d'authentification (login, inscription, etc.) dans le projet :`** php artisan breeze:install
+
+**`Crée un nouveau projet avec Vite, un outil rapide et efficace pour les applications JavaScript :`** npm init vite 
+
 
 
 
