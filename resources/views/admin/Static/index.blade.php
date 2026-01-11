@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-
+            
                 <div class="stat-card">
                     <h3>Tags</h3>
                     <p>{{ $Tags->count() }}</p>

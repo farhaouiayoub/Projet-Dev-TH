@@ -183,6 +183,7 @@ input[type="file"] {
     padding: 0.5rem;
     border: 2px dashed #cbd5e0;
     background: #f8fafc;
+    color: #000000;
 
     &::file-selector-button {
         padding: 0.5rem 1rem;
